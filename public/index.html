@@ -5,11 +5,276 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Gottschalk</title>
+  <title>Gottschalk History | Family Stories &amp; Memories</title>
+  <meta name="description"
+    content="A home for Gottschalk family stories, photographs, and memories. Our family history archive is coming soon.">
+  <meta name="theme-color" content="#e1e8df">
+  <link rel="canonical" href="https://gottschalk-history.org/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gottschalk-history.org/">
+  <meta property="og:site_name" content="Gottschalk History">
+  <meta property="og:title" content="Gottschalk History | Family Stories &amp; Memories">
+  <meta property="og:description"
+    content="A home for Gottschalk family stories, photographs, and memories. Our family history archive is coming soon.">
+
+  <style>
+    :root {
+      --paper: #f1f4ed;
+      --paper-deep: #d8e2d4;
+      --ink: #222c27;
+      --muted: #56645b;
+      --accent: #4d7161;
+      --accent-dark: #2c5142;
+      --line: rgba(44, 81, 66, 0.18);
+      --shadow: 0 18px 60px rgba(30, 53, 40, 0.1);
+      color-scheme: light;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.65;
+      background:
+        radial-gradient(circle at top, rgba(250, 252, 245, 0.95), rgba(241, 244, 237, 0.96) 35%, rgba(216, 226, 212, 0.98) 100%),
+        linear-gradient(180deg, var(--paper-deep), var(--paper));
+    }
+
+    a { color: var(--accent-dark); }
+
+    a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
+    }
+
+    .page {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 900;
+      border-bottom: 1px solid var(--line);
+      background: rgba(241, 244, 237, 0.94);
+      backdrop-filter: blur(12px);
+    }
+
+    .site-nav-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px 16px;
+      min-height: 72px;
+      padding: 16px 0;
+    }
+
+    .site-brand {
+      text-decoration: none;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .site-nav-links { display: flex; gap: 12px; }
+
+    .site-nav-links a {
+      text-decoration: none;
+      padding: 10px 16px;
+      border: 1px solid var(--line);
+      background: rgba(251, 253, 247, 0.88);
+      font-weight: 700;
+    }
+
+    .hero { padding: 48px 0 28px; }
+
+    .masthead {
+      display: grid;
+      gap: 28px;
+      grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+      align-items: end;
+    }
+
+    .hero-copy {
+      padding: 40px;
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(180deg, rgba(251, 253, 247, 0.96), rgba(233, 240, 229, 0.96)),
+        repeating-linear-gradient(0deg, rgba(44, 81, 66, 0.03) 0, rgba(44, 81, 66, 0.03) 1px, transparent 1px, transparent 34px);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-copy::after {
+      content: "";
+      position: absolute;
+      inset: 18px;
+      border: 1px solid rgba(77, 113, 97, 0.14);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin: 0 0 12px;
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    h1, h2 { line-height: 1.08; margin: 0; font-weight: 700; }
+
+    h1 {
+      font-size: clamp(2.8rem, 7vw, 5.6rem);
+      max-width: 10ch;
+      text-wrap: balance;
+    }
+
+    .subtitle {
+      margin: 16px 0 18px;
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 60ch;
+    }
+
+    .lede { margin: 0; font-size: 1.05rem; max-width: 64ch; }
+
+    .hero-meta { display: grid; gap: 16px; align-self: stretch; }
+
+    .meta-card, .quote-card, .panel {
+      border: 1px solid var(--line);
+      background: rgba(251, 253, 248, 0.88);
+      box-shadow: var(--shadow);
+    }
+
+    .meta-card {
+      padding: 24px;
+      display: grid;
+      gap: 18px;
+      align-content: start;
+      margin: 0;
+    }
+
+    .meta-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .meta-value { margin: 0; font-size: 1.05rem; }
+
+    .quote-card {
+      padding: 24px;
+      background: linear-gradient(180deg, rgba(243, 248, 238, 0.95), rgba(224, 235, 219, 0.95));
+    }
+
+    .quote-card p { margin: 0; font-size: 1.08rem; }
+
+    .content-grid { display: grid; gap: 28px; padding-bottom: 56px; }
+
+    .panel { padding: 32px; scroll-margin-top: 140px; }
+
+    .section-heading { font-size: clamp(1.6rem, 4vw, 2.4rem); margin-bottom: 18px; }
+
+    .key-points {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 6px;
+    }
+
+    .point {
+      padding: 18px;
+      border: 1px solid var(--line);
+      background: rgba(246, 250, 240, 0.82);
+    }
+
+    .point strong { display: block; margin-bottom: 8px; color: var(--accent-dark); }
+
+    .panel p { margin: 0 0 16px; }
+    .panel p:last-child { margin-bottom: 0; }
+
+    footer { padding: 0 0 56px; color: var(--muted); text-align: center; font-size: 0.95rem; }
+
+    @media (max-width: 880px) {
+      .masthead, .key-points { grid-template-columns: 1fr; }
+      .hero-copy, .meta-card, .quote-card, .panel { padding: 24px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+  </style>
 </head>
 
 <body>
-  hi world
+  <nav class="site-nav" aria-label="Primary">
+    <div class="page site-nav-bar">
+      <a class="site-brand" href="./">Gottschalk History</a>
+      <div class="site-nav-links">
+        <a href="#archive">The Archive</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <header class="hero">
+      <div class="page masthead">
+        <section class="hero-copy" aria-labelledby="page-title">
+          <p class="eyebrow">A Family History Archive</p>
+          <h1 id="page-title">Gottschalk History</h1>
+          <p class="subtitle">Family stories, shared memories, and the lives that connect us.</p>
+          <p class="lede">Welcome to a home for the Gottschalk family's history. In time, this space will hold
+            the stories and photographs we want to preserve for generations to come.</p>
+        </section>
+        <aside class="hero-meta" aria-label="About the archive">
+          <dl class="meta-card">
+            <div>
+              <dt class="meta-label">Our Focus</dt>
+              <dd class="meta-value">The Gottschalk Family</dd>
+            </div>
+            <div>
+              <dt class="meta-label">Archive Status</dt>
+              <dd class="meta-value">Just getting started</dd>
+            </div>
+          </dl>
+          <div class="quote-card">
+            <p>Every family has stories worth keeping. This is where ours will find a home.</p>
+          </div>
+        </aside>
+      </div>
+    </header>
+
+    <div class="page content-grid">
+      <section class="panel" id="archive" aria-labelledby="archive-title">
+        <h2 class="section-heading" id="archive-title">Our Family Archive</h2>
+        <p>We're preparing this space for family history. More details will be added as the archive takes shape.</p>
+        <div class="key-points">
+          <div class="point">
+            <strong>Stories &amp; Memories</strong>
+            <p>A place for personal recollections and the everyday moments that become family history. Coming soon.</p>
+          </div>
+          <div class="point">
+            <strong>Photographs &amp; Keepsakes</strong>
+            <p>A place for family photographs and the memories behind them. Coming soon.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="page">Gottschalk History &middot; Preserving family memories for generations to come.</footer>
 </body>
 
 </html>

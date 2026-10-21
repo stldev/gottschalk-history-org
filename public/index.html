@@ -5,17 +5,17 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Gottschalk History | Family Stories &amp; Memories</title>
+  <title>The Gottschalk Family Story | A Family History Archive</title>
   <meta name="description"
-    content="A home for Gottschalk family stories, photographs, and memories. Our family history archive is coming soon.">
+    content="A chronological history of the Kunes, Hejdrčal, Chandler, and Gottschalk families, compiled from family stories and records.">
   <meta name="theme-color" content="#e1e8df">
   <link rel="canonical" href="https://gottschalk-history.org/">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://gottschalk-history.org/">
   <meta property="og:site_name" content="Gottschalk History">
-  <meta property="og:title" content="Gottschalk History | Family Stories &amp; Memories">
+  <meta property="og:title" content="The Gottschalk Family Story | A Family History Archive">
   <meta property="og:description"
-    content="A home for Gottschalk family stories, photographs, and memories. Our family history archive is coming soon.">
+    content="A chronological history of the Kunes, Hejdrčal, Chandler, and Gottschalk families, compiled from family stories and records.">
 
   <style>
     :root {
@@ -131,7 +131,7 @@
       font-weight: 700;
     }
 
-    h1, h2 { line-height: 1.08; margin: 0; font-weight: 700; }
+    h1, h2, h3 { line-height: 1.08; margin: 0; font-weight: 700; }
 
     h1 {
       font-size: clamp(2.8rem, 7vw, 5.6rem);
@@ -205,10 +205,113 @@
     .panel p { margin: 0 0 16px; }
     .panel p:last-child { margin-bottom: 0; }
 
+    .panel h3 {
+      margin: 38px 0 14px;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+      color: var(--accent-dark);
+      font-size: clamp(1.35rem, 3vw, 1.85rem);
+      text-wrap: balance;
+    }
+
+    .panel h3:first-of-type { margin-top: 28px; }
+
+    .story-intro { font-size: 1.12rem; max-width: 74ch; }
+
+    .toc {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+      gap: 10px;
+      margin: 24px 0 8px;
+    }
+
+    .toc a {
+      min-height: 74px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 4px;
+      padding: 12px 15px;
+      border: 1px solid var(--line);
+      background: linear-gradient(145deg, rgba(251,253,247,.96), rgba(231,239,226,.92));
+      color: var(--accent-dark);
+      text-decoration: none;
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+
+    .toc a:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+    .toc small { color: var(--muted); font-size: .76rem; letter-spacing: .1em; text-transform: uppercase; }
+
+    .chapter { scroll-margin-top: 110px; }
+
+    .timeline-ribbon {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
+      gap: 1px;
+      margin: 24px 0;
+      border: 1px solid var(--line);
+      background: var(--line);
+    }
+
+    .timeline-ribbon a {
+      display: grid;
+      align-content: center;
+      min-height: 86px;
+      padding: 12px;
+      background: rgba(251,253,247,.94);
+      text-decoration: none;
+    }
+
+    .timeline-ribbon strong { font-size: 1.1rem; }
+    .timeline-ribbon span { color: var(--muted); font-size: .88rem; }
+
+    .story-callout {
+      margin: 24px 0;
+      padding: 24px 28px;
+      border-left: 4px solid var(--accent);
+      background: linear-gradient(100deg, rgba(224,235,219,.9), rgba(251,253,247,.75));
+      font-size: 1.18rem;
+    }
+
+    .story-callout p { margin: 0; }
+    .story-callout cite { display: block; margin-top: 10px; color: var(--muted); font-size: .88rem; font-style: normal; }
+
+    .family-map {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin: 22px 0;
+    }
+
+    .family-card {
+      padding: 18px;
+      border: 1px solid var(--line);
+      background: rgba(246,250,240,.82);
+    }
+
+    .family-card span { display: block; margin-bottom: 6px; color: var(--accent); font-size: .76rem; letter-spacing: .12em; text-transform: uppercase; }
+    .family-card strong { display: block; margin-bottom: 7px; color: var(--accent-dark); font-size: 1.12rem; }
+    .family-card p { margin: 0; font-size: .94rem; }
+
+    .fact-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+      gap: 12px;
+      margin: 22px 0;
+    }
+
+    .fact { padding: 16px; border: 1px solid var(--line); background: rgba(251,253,247,.76); }
+    .fact strong { display: block; color: var(--accent-dark); font-size: 1.22rem; }
+    .fact span { color: var(--muted); font-size: .88rem; }
+
+    details.source-note { margin-top: 18px; border: 1px solid var(--line); background: rgba(251,253,247,.74); }
+    details.source-note summary { padding: 14px 18px; color: var(--accent-dark); cursor: pointer; font-weight: 700; }
+    details.source-note p { padding: 0 18px 18px; }
+
     footer { padding: 0 0 56px; color: var(--muted); text-align: center; font-size: 0.95rem; }
 
     @media (max-width: 880px) {
-      .masthead, .key-points { grid-template-columns: 1fr; }
+      .masthead, .key-points, .family-map { grid-template-columns: 1fr; }
       .hero-copy, .meta-card, .quote-card, .panel { padding: 24px; }
     }
 
@@ -223,7 +326,8 @@
     <div class="page site-nav-bar">
       <a class="site-brand" href="./">Gottschalk History</a>
       <div class="site-nav-links">
-        <a href="#archive">The Archive</a>
+        <a href="#chronology">Chronology</a>
+        <a href="#sources">Sources &amp; questions</a>
       </div>
     </div>
   </nav>
@@ -232,44 +336,126 @@
     <header class="hero">
       <div class="page masthead">
         <section class="hero-copy" aria-labelledby="page-title">
-          <p class="eyebrow">A Family History Archive</p>
-          <h1 id="page-title">Gottschalk History</h1>
-          <p class="subtitle">Family stories, shared memories, and the lives that connect us.</p>
-          <p class="lede">Welcome to a home for the Gottschalk family's history. In time, this space will hold
-            the stories and photographs we want to preserve for generations to come.</p>
+          <p class="eyebrow">A Chronological Family History</p>
+          <h1 id="page-title">The Gottschalk Family Story</h1>
+          <p class="subtitle">Kunes · Hejdrčal · Chandler · Gottschalk and related families</p>
+          <p class="lede">This history brings together family recollections, handwritten notes, photographs of records, and newspaper and memorial notices. It follows the connections that can be traced while preserving uncertainty where the documents leave questions open.</p>
         </section>
         <aside class="hero-meta" aria-label="About the archive">
           <dl class="meta-card">
             <div>
               <dt class="meta-label">Our Focus</dt>
-              <dd class="meta-value">The Gottschalk Family</dd>
+              <dd class="meta-value">Four family histories</dd>
             </div>
             <div>
               <dt class="meta-label">Archive Status</dt>
-              <dd class="meta-value">Just getting started</dd>
+              <dd class="meta-value">Compiled from supplied family materials</dd>
             </div>
           </dl>
           <div class="quote-card">
-            <p>Every family has stories worth keeping. This is where ours will find a home.</p>
+            <p>These recollections preserve the lives, journeys, and hard choices that shaped generations of the family.</p>
           </div>
         </aside>
       </div>
     </header>
 
     <div class="page content-grid">
-      <section class="panel" id="archive" aria-labelledby="archive-title">
-        <h2 class="section-heading" id="archive-title">Our Family Archive</h2>
-        <p>We're preparing this space for family history. More details will be added as the archive takes shape.</p>
+      <section class="panel" id="chronology" aria-labelledby="chronology-title">
+        <p class="eyebrow">The family story</p>
+        <h2 class="section-heading" id="chronology-title">A chronology across generations</h2>
+        <p>The records describe several branches. The Chandler and Gottschalk families join through Nellie Irene Chandler and Karl Gottschalk Jr.; the Kunes branch joins them through Patricia Marie Kunes Gottschalk. The Hejdrčal materials may represent a separate branch, since no supplied record proves a connection to the Kunes family.</p>
+
+        <div class="family-map" aria-label="The family branches in this archive">
+          <div class="family-card"><span>Missouri roots</span><strong>Chandler</strong><p>Nellie Irene Chandler grows up in Pike County, leaves home as a teenager, and makes her way to Iowa.</p></div>
+          <div class="family-card"><span>Iowa years</span><strong>Gottschalk</strong><p>Nellie and Karl build a family, weather hard years, and are separated from their eldest son for much of his childhood.</p></div>
+          <div class="family-card"><span>Family connection</span><strong>Kunes</strong><p>Patricia Marie Kunes connects the Kunes branch to Karl Gottschalk Jr. and the family memoir.</p></div>
+        </div>
+        <p>The Hejdrčal stories sit beside these connected branches as a separate set of family records. They share a Bohemian and St. Louis setting, but the link to the Kunes family has not been proved.</p>
+        <nav class="toc" aria-label="Jump to a chapter">
+          <a href="#kunes"><small>Chapter 1</small><strong>St. Louis beginnings</strong></a>
+          <a href="#hejdr"><small>Chapter 2</small><strong>Bohemian roots</strong></a>
+          <a href="#nellie"><small>Chapter 3</small><strong>Nellie’s early life</strong></a>
+          <a href="#marriage"><small>Chapter 4</small><strong>A new family</strong></a>
+          <a href="#separation"><small>Chapter 5</small><strong>A long separation</strong></a>
+          <a href="#reunion"><small>Chapter 6</small><strong>Home again</strong></a>
+          <a href="#patricia"><small>Chapter 7</small><strong>Branches come together</strong></a>
+          <a href="#sources"><small>Field notes</small><strong>Sources &amp; questions</strong></a>
+        </nav>
+        <div class="timeline-ribbon" aria-label="Selected dates in the family history">
+          <a href="#kunes"><strong>1872</strong><span>Wenceslaus &amp; Anne marry</span></a>
+          <a href="#nellie"><strong>1903</strong><span>Nellie is born</span></a>
+          <a href="#marriage"><strong>1923</strong><span>Nellie &amp; Karl marry</span></a>
+          <a href="#separation"><strong>c. 1926</strong><span>Karl Jr. goes to Iowa</span></a>
+          <a href="#reunion"><strong>1938</strong><span>Karl Jr. comes home</span></a>
+          <a href="#patricia"><strong>1940s</strong><span>The Kunes link emerges</span></a>
+        </div>
+
+        <h3 class="chapter" id="kunes">Chapter 1 · 1848–1905: St. Louis beginnings</h3>
+        <p>Family notes place Wenceslaus Joseph Kunes’s birth in 1848. They describe him as a blacksmith and son of a mason from a Bohemian place transcribed as “Krenierre,” a spelling that remains uncertain. On November 19, 1872, he married Anne Tikvart in St. Louis; the ceremony was performed by Rev. Joseph Hessoun.</p>
+        <p>The notes name three daughters from this marriage: Anna (1874–1960), who married Albert Cross; Mary (1876–1929), who married George Breathauer; and Barbara (1878–1909), who married Charles Jackson. After Anne’s death, Wenceslaus married Barbara Soukup. Their sons were William (1884–1955), Joseph John (1886–1948), and Anthony (born 1889). Joseph married Julia Lee in 1905, according to the family notes.</p>
+
+        <div class="fact-strip" aria-label="Kunes family milestones"><div class="fact"><strong>Nov. 19, 1872</strong><span>Wenceslaus Joseph and Anne marry in St. Louis</span></div><div class="fact"><strong>3 daughters</strong><span>Anna, Mary, and Barbara in the family notes</span></div><div class="fact"><strong>3 sons</strong><span>William, Joseph John, and Anthony in the second family</span></div></div>
+
+        <h3>A story carried forward</h3>
+        <div class="story-callout"><p>A family picnic, a frightened horse, an overturned wagon—and a sudden loss that changed the lives of six children.</p><cite>As remembered in “A Story About Wenceslaus,” told by Patricia Gottschalk</cite></div>
+        <p>A story told by Patricia Gottschalk recalls a picnic in a horse-drawn wagon. A storm frightened the horse, the wagon overturned, and Wenceslaus died in the accident while Barbara was badly injured. The story says Barbara kept the family together for about seven more years. After her death, William was taken in by relatives Michael and Mary Rehg, while Joseph and Anthony went to St. Vincent’s Orphanage. The account also recalls Anthony’s farm and coal-mine work and Joseph’s later escape from the orphanage. Neither death date is established in the supplied materials, so this remains family recollection.</p>
+
+        <h3 class="chapter" id="hejdr">Chapter 2 · 1860s–1874: Bohemian roots and St. Louis records</h3>
+        <p>A family note says Mary Antoinette Hejdrčal came from Bohemia and immigrated with her parents and brother John in 1863, at about age three. It recalls that her father left Austria to avoid military conscription and later moved the family to St. Louis during the Civil War. Her sister Louisa was reportedly born in New York. The same note records “Mary Lee” dying on October 21, 1929, aged 65, but it does not establish whether Mary Lee was Mary Antoinette after marriage or another person.</p>
+        <p>A Czech memorial notice records the death of Františka Hejdrčal on January 25, 1874, and names her husband Václav and three children. It says she came from Týn nad Vltavou in Bohemia. A shared surname and background suggest a research lead, but do not establish a relationship to Mary Antoinette.</p>
+
+        <h3 class="chapter" id="nellie">Chapter 3 · 1895–1919: Nellie Chandler finds her way</h3>
+        <p>Nellie Irene Chandler’s recollection gives her birth as February 15, 1903, on a Pike County, Missouri farm; another account names Ladonia. Her parents were farmers Oliver Chandler and Minerva Moore. The materials name Bessie, Alma, Carrie or Carriebell, Leslie, Herman, Harry, Nellie, and Paul, who reportedly died as an infant. One summary says there were seven children, leaving the count unresolved.</p>
+        <p>Nellie recalled that Minerva died after an operation and heart attack in 1905. Oliver later married Carrie Humphrey in 1915. At thirteen, Nellie left school and went to work for a neighboring family. Around 1919 she went to Iowa with her sister Bessie and the Hendricks family, working on farms, in a restaurant, and later at a bakery. She also recalled living with the Wendt family, who treated her as one of their own.</p>
+        <div class="key-points">
+          <div class="point"><strong>Her first job</strong><p>In February 1916, Nellie left school before finishing eighth grade and went to work for Bill Hines for $2.50 a week. She stayed with the family for about three years.</p></div>
+          <div class="point"><strong>A fresh start in Iowa</strong><p>She first worked on a farm, then washed dishes for $10 a week with room and board. A bakery across the street later hired her behind the counter.</p></div>
+        </div>
+        <p>Another retelling remembers Nellie caring for five children before the bakery job. The exact order and dates are not clear, but the different accounts agree on a young woman who worked wherever she could and steadily made a life of her own.</p>
+
+        <h3 class="chapter" id="marriage">Chapter 4 · 1917–1926: Nellie and Karl build a family</h3>
+        <p>Karl Gottschalk Sr., son of Bertha Muller and Franklin Gottschalk, grew up on an Iowa farm. Nellie’s account says they met when Karl’s family rented a neighboring farm and later began courting in Manson. Karl joined the U.S. Navy and returned in August 1922. Nellie and Karl married on January 30, 1923, in a Manson church. Nellie said she had converted to Catholicism around Christmas 1922.</p>
+        <p>The accounts differ about an accident that Christmas season: one describes a horse and sleigh sliding from a bridge; Nellie’s own account describes a car overturning into a ditch on Christmas Eve and injuring her shoulder. The records may describe one event differently, and neither version is independently confirmed. Their children named in the materials include Karl Jr. (born January 12, 1924, during a blizzard), Bertha (March 29, 1925), Pauline (June 26, 1926), Donald E., and Kenneth Wayne. The document gives no birth year for Donald.</p>
+        <div class="story-callout"><p>Feather pillows and a feather bed, chickens and a cow—and, in Nellie’s recollection, six hens from Bessie and a hundred baby chicks from her stepmother.</p><cite>Wedding gifts remembered by the family; the accounts may describe several gifts or different tellings of them.</cite></div>
+        <p>Those gifts hint at the practical start the newlyweds were trying to make. They stayed with Bessie and Raymond for a time, then moved into an old farmhouse. Gardens and livestock helped stretch a tight budget, while Nellie’s sewing and paper-flower making brought in money for the children.</p>
+
+        <h3 class="chapter" id="separation">Chapter 5 · Late 1920s: The years apart</h3>
+        <p>The family story describes severe financial hardship and frequent moves. When Karl Jr. was about two, he was hospitalized for ear disease and underwent several operations, losing hearing in his right ear. The family recollection says he became a ward of the state and was released to his paternal grandparents, Bertha and Franklin, on their farm near Fort Dodge. He grew up there with help from his aunt Carolina, known as “Aunt Lena.” These details describe the family’s account and have not been checked against medical or court records.</p>
+        <p>On the farm, Karl remembered learning to drive a Model T between rows of corn, walking behind a plow, leading horses, and helping his grandmother in the garden. He went to a one-room schoolhouse and had farm chores. By thirteen he had finished eighth grade and was ready to leave farm life. His aunt and uncle, Ann and Lee, and cousins Emmett and Joel were part of the wider family around him.</p>
+        <h3 class="chapter" id="reunion">Chapter 6 · 1938–1942: The journey home</h3>
+        <p>Nellie, Karl Sr., and their other children eventually returned to Missouri, with help from Nellie’s brother Harry. In 1938, Karl Jr. hitchhiked from Iowa to rejoin them near Wellsville. His relatives remembered the trip as an adventure: a lift from a stranger who let Karl take the wheel, a meal of fried chicken, and a call to his mother once he reached town. He returned to school and graduated from Wellsville High School in May 1941. During World War II, the family moved to St. Louis for wartime work. Karl Sr. worked at McQuay-Norris, Nellie at a small-arms plant, and Karl Jr. at the Cotton Belt Railroad, where the family story says he met Patricia Kunes.</p>
+        <div class="fact-strip" aria-label="The family's journey"><div class="fact"><strong>19 moves</strong><span>A later retelling counts the family’s many relocations</span></div><div class="fact"><strong>Wellsville</strong><span>Karl Jr. returned to school and graduated in 1941</span></div><div class="fact"><strong>St. Louis</strong><span>Wartime jobs brought the family to the city</span></div></div>
+
+        <h3 class="chapter" id="patricia">Chapter 7 · Patricia Kunes and the branches come together</h3>
+        <p>The Kunes notes identify Patricia Marie Kunes as a daughter of Joseph John Kunes and Julia Lee. The Gottschalk narrative was told to Patricia Marie Kunes Gottschalk. Together, these materials connect the Kunes and Gottschalk branches through Patricia and Karl Gottschalk Jr. The supplied documents do not give their marriage date or a confirmed list of their children. A separate handwritten sheet contains several names, but the relationships are too unclear to treat them as established descendants.</p>
+        <p>One branch reaches back to St. Louis blacksmith Wenceslaus Joseph Kunes; another follows Nellie Chandler from a Missouri farm to Iowa and then back to Missouri. Their stories meet in the next generation, in the wartime city where a railroad job brought Karl Jr. and Patricia together. The source material leaves many later family details to be filled in by relatives and records.</p>
+
+        <h3>Photographs and other records</h3>
+        <p>A grave marker records Wilbert J. Kunes (1911–1962) and Lillian M. Chiaurro (1915–1985), labeled “Father” and “Mother.” Wilbert may be the son of Joseph John and Julia listed in the family notes, but the marker alone does not prove that identity or name their children. Photographs of an 1884 parish register contain faint baptism entries; tentative readings of names are uncertain and are not used here as confirmed family links. A newspaper clipping about “Kenny Gottschalk” driving the “Golden Bullet” at the Missouri State Fair is another lead whose family connection is unknown.</p>
+      </section>
+
+      <section class="panel" id="sources" aria-labelledby="sources-title">
+        <h2 class="section-heading" id="sources-title">Sources, limits, and open questions</h2>
+        <p>This chronology brings together family stories and surviving records. Duplicate versions were read as one narrative, with differing recollections preserved rather than treated as independent confirmation.</p>
+        <p>The recollections have not been independently verified. Dates, spellings, identities, and relationships remain uncertain where the supplied materials do not settle them. Useful next records may include civil certificates, census and immigration records, parish registers, orphanage and court files, and cemetery records.</p>
         <div class="key-points">
           <div class="point">
-            <strong>Stories &amp; Memories</strong>
-            <p>A place for personal recollections and the everyday moments that become family history. Coming soon.</p>
+            <strong>Questions still open</strong>
+            <p>Was Mary Lee Mary Antoinette Hejdrčal? Were Františka and Václav related to her? Is the Wilbert on the marker Joseph John and Julia’s son, and what was Lillian’s relationship to him?</p>
           </div>
           <div class="point">
-            <strong>Photographs &amp; Keepsakes</strong>
-            <p>A place for family photographs and the memories behind them. Coming soon.</p>
+            <strong>Details to confirm</strong>
+            <p>When did Wenceslaus and Barbara die? What is the correct Bohemian place-name? What were Donald E.’s birth year and Patricia and Karl Jr.’s marriage date and descendants?</p>
           </div>
         </div>
+        <details class="source-note">
+          <summary>How this edition handles family stories</summary>
+          <p>Overlapping versions of Nellie’s memoir were read together as one family narrative, not as separate confirmation. When details differ—such as the Christmas-season accident or the wedding gifts—the page keeps both memories visible. Family recollections are identified as recollections, and uncertain identities or spellings are left open.</p>
+        </details>
+        <details class="source-note">
+          <summary>Where the source material came from</summary>
+          <p>The supplied collection includes family histories attributed to Patricia Gottschalk / Patricia Marie Kunes Gottschalk and typed by Deborah Gottschalk or Deborah Shucart in 2007; copies reportedly digitized by Richard Barton in 2009; handwritten notes; a Czech memorial notice; parish-register and grave-marker photographs; and a newspaper clipping. No outside genealogical verification has been done for this edition.</p>
+        </details>
       </section>
     </div>
   </main>
